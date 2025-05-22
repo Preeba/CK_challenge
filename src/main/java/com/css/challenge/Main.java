@@ -9,6 +9,8 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.css.challenge.service.KitchenManager;
 import org.apache.log4j.Level;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,15 +57,28 @@ public class Main implements Runnable {
       // ------ Simulation harness logic goes here using rate, min and max ----
 
       List<Action> actions = new ArrayList<>();
+      KitchenManager manager = new KitchenManager(actions);
+
       for (Order order : problem.getOrders()) {
         LOGGER.info("Received: {}", order);
 
-        actions.add(new Action(Instant.now(), order.getId(), Action.PLACE));
+        manager.placeOrder(order);
+
         Thread.sleep(rate.toMillis());
+
+        // Simulate a pickup randomly after a few orders
+        if (Math.random() < 0.5) {
+          manager.pickupOrder(order.getId());
+        }
+        Thread.sleep(100); // small sleep to avoid tight loop
       }
 
       // ----------------------------------------------------------------------
-
+      // Debugging to see actionsLog
+      for (Action a : actions) {
+        LOGGER.info("Action: {} | OrderID: {} | Time: {}", a.getAction(), a.getId(), a.getTimestamp());
+      }
+      // ----------------------------------------------------------------------
       String result = client.solveProblem(problem.getTestId(), rate, min, max, actions);
       LOGGER.info("Result: {}", result);
 
