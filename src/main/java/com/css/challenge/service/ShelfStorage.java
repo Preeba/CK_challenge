@@ -23,11 +23,9 @@ public class ShelfStorage implements Storage {
 
     @Override
     public boolean addOrder(Order order) {
-        if (orders.size() < capacity) {
-            orders.put(order.getId(), order);
-            return true;
-        }
-        return false;
+        if (orders.size() >= capacity) return false;
+        orders.putIfAbsent(order.getId(), order);
+        return true;
     }
 
     @Override

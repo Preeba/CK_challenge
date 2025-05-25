@@ -9,6 +9,9 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import com.css.challenge.service.KitchenManager;
 import org.apache.log4j.Level;
@@ -58,31 +61,53 @@ public class Main implements Runnable {
 
       List<Action> actions = new ArrayList<>();
       KitchenManager manager = new KitchenManager(actions);
+      ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(4);
 
-      for (Order order : problem.getOrders()) {
-        LOGGER.info("Received: {}", order);
+      List<Order> orders = problem.getOrders();
+      for (int i = 0; i < orders.size(); i++) {
+        Order order = orders.get(i);
+        long delay = rate.toMillis() * i;
 
-        manager.placeOrder(order);
+        // Schedule order placement
+        scheduler.schedule(() -> {
+          LOGGER.info("Received: {}", order);
+          manager.placeOrder(order);
 
-        Thread.sleep(rate.toMillis());
+          // Schedule pickup after a random delay between min and max
+          long pickupDelay = min.toMillis() + (long) (Math.random() * (max.toMillis() - min.toMillis()));
+          scheduler.schedule(() -> {
+            LOGGER.info("PickedUp: {}", order);
+            manager.pickupOrder(order.getId());
+          }, pickupDelay, TimeUnit.MILLISECONDS);
 
-        // Simulate a pickup randomly after a few orders
-        if (Math.random() < 0.5) {
-          manager.pickupOrder(order.getId());
+        }, delay, TimeUnit.MILLISECONDS);
+      }
+
+      // Shut down the scheduler after last order and pickup time
+      long totalDuration = rate.toMillis() * orders.size() + max.toMillis() + 1000;
+      scheduler.schedule(() -> {
+        scheduler.shutdown();
+        try {
+          scheduler.awaitTermination(3, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+          LOGGER.error("Scheduler termination interrupted");
         }
-        Thread.sleep(100); // small sleep to avoid tight loop
-      }
 
-      // ----------------------------------------------------------------------
-      // Debugging to see actionsLog
-      for (Action a : actions) {
-        LOGGER.info("Action: {} | OrderID: {} | Time: {}", a.getAction(), a.getId(), a.getTimestamp());
-      }
-      // ----------------------------------------------------------------------
-      String result = client.solveProblem(problem.getTestId(), rate, min, max, actions);
-      LOGGER.info("Result: {}", result);
+        // ----------------------------------------------------------------------
+        // Debugging to see actionsLog
+        for (Action a : actions) {
+          LOGGER.info("Action: {} | OrderID: {} | Time: {}", a.getAction(), a.getId(), a.getTimestamp());
+        }
+        // ----------------------------------------------------------------------
+        try {
+          String result = client.solveProblem(problem.getTestId(), rate, min, max, actions);
+          LOGGER.info("Result: {}", result);
 
-    } catch (IOException | InterruptedException e) {
+        } catch (IOException e) {
+          LOGGER.error("Solve problem failed: {}", e.getMessage());
+        }
+      }, totalDuration, TimeUnit.MILLISECONDS);
+    } catch (IOException e) {
       LOGGER.error("Simulation failed: {}", e.getMessage());
     }
   }
