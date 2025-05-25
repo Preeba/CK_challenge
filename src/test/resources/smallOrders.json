@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "Raspberries",
+    "temp": "room",
+    "freshness": 97
+  },
+  {
+    "id": "2",
+    "name": "Chicken Nuggets",
+    "temp": "hot",
+    "freshness": 86
+  },
+  {
+    "id": "3",
+    "name": "Strawberry Ice Cream",
+    "temp": "cold",
+    "freshness": 91
+  }
+]

@@ -1,0 +1,290 @@
+[
+  {
+    "id": "q5ykz",
+    "name": "Pressed Juice",
+    "temp": "cold",
+    "freshness": 84
+  },
+  {
+    "id": "gcedz",
+    "name": "Spaghetti",
+    "temp": "hot",
+    "freshness": 114
+  },
+  {
+    "id": "p1x78",
+    "name": "Strawberries",
+    "temp": "room",
+    "freshness": 63
+  },
+  {
+    "id": "hftfi",
+    "name": "Mixed Greens",
+    "temp": "cold",
+    "freshness": 150
+  },
+  {
+    "id": "fqwm6",
+    "name": "Chocolate Gelato",
+    "temp": "cold",
+    "freshness": 83
+  },
+  {
+    "id": "xgk6f",
+    "name": "Pressed Juice",
+    "temp": "cold",
+    "freshness": 165
+  },
+  {
+    "id": "5o1f6",
+    "name": "Mac \u0026 Cheese",
+    "temp": "hot",
+    "freshness": 121
+  },
+  {
+    "id": "uiw5y",
+    "name": "Spaghetti",
+    "temp": "hot",
+    "freshness": 119
+  },
+  {
+    "id": "5i531",
+    "name": "Fizzed-Out Pepsi",
+    "temp": "room",
+    "freshness": 146
+  },
+  {
+    "id": "j8791",
+    "name": "Cookie Dough",
+    "temp": "cold",
+    "freshness": 169
+  },
+  {
+    "id": "segkx",
+    "name": "Strawberry Ice Cream",
+    "temp": "cold",
+    "freshness": 178
+  },
+  {
+    "id": "x9off",
+    "name": "Fizzed-Out Pepsi",
+    "temp": "room",
+    "freshness": 168
+  },
+  {
+    "id": "qsg1i",
+    "name": "Kebab",
+    "temp": "hot",
+    "freshness": 119
+  },
+  {
+    "id": "r98e6",
+    "name": "Cheeseburger",
+    "temp": "hot",
+    "freshness": 141
+  },
+  {
+    "id": "mdki7",
+    "name": "Orange Sherbet",
+    "temp": "cold",
+    "freshness": 107
+  },
+  {
+    "id": "qnig3",
+    "name": "Tuna Sandwich",
+    "temp": "cold",
+    "freshness": 166
+  },
+  {
+    "id": "5bf9q",
+    "name": "Pastrami Sandwich",
+    "temp": "cold",
+    "freshness": 130
+  },
+  {
+    "id": "zym94",
+    "name": "Orange Sherbet",
+    "temp": "cold",
+    "freshness": 155
+  },
+  {
+    "id": "55fsh",
+    "name": "Danish Pastry",
+    "temp": "room",
+    "freshness": 73
+  },
+  {
+    "id": "tjgku",
+    "name": "Italian Meatballs",
+    "temp": "hot",
+    "freshness": 66
+  },
+  {
+    "id": "w8hq8",
+    "name": "Coconut",
+    "temp": "room",
+    "freshness": 65
+  },
+  {
+    "id": "3rhp6",
+    "name": "Kebab",
+    "temp": "hot",
+    "freshness": 155
+  },
+  {
+    "id": "s9ucc",
+    "name": "Popsicle",
+    "temp": "cold",
+    "freshness": 167
+  },
+  {
+    "id": "3mdx3",
+    "name": "Burrito",
+    "temp": "hot",
+    "freshness": 97
+  },
+  {
+    "id": "4y8a5",
+    "name": "Pad See Ew",
+    "temp": "hot",
+    "freshness": 166
+  },
+  {
+    "id": "1w5tr",
+    "name": "Raspberries",
+    "temp": "room",
+    "freshness": 117
+  },
+  {
+    "id": "dmcp1",
+    "name": "Spaghetti",
+    "temp": "hot",
+    "freshness": 137
+  },
+  {
+    "id": "ck134",
+    "name": "Pastrami Sandwich",
+    "temp": "cold",
+    "freshness": 115
+  },
+  {
+    "id": "xbmjp",
+    "name": "Strawberries",
+    "temp": "room",
+    "freshness": 107
+  },
+  {
+    "id": "6ui8s",
+    "name": "Chocolate Gelato",
+    "temp": "cold",
+    "freshness": 71
+  },
+  {
+    "id": "axjng",
+    "name": "Strawberries",
+    "temp": "room",
+    "freshness": 72
+  },
+  {
+    "id": "q1hb8",
+    "name": "Fizzed-Out Pepsi",
+    "temp": "room",
+    "freshness": 106
+  },
+  {
+    "id": "nz85w",
+    "name": "Coconut",
+    "temp": "room",
+    "freshness": 64
+  },
+  {
+    "id": "r5sm6",
+    "name": "Lukewarm Coke",
+    "temp": "room",
+    "freshness": 170
+  },
+  {
+    "id": "d6sby",
+    "name": "Cheese Pizza",
+    "temp": "hot",
+    "freshness": 104
+  },
+  {
+    "id": "a65ka",
+    "name": "Tuna Sandwich",
+    "temp": "cold",
+    "freshness": 154
+  },
+  {
+    "id": "e69pc",
+    "name": "Danish Pastry",
+    "temp": "room",
+    "freshness": 79
+  },
+  {
+    "id": "8yncw",
+    "name": "Cookie Dough",
+    "temp": "cold",
+    "freshness": 141
+  },
+  {
+    "id": "ap3x6",
+    "name": "Cheese Pizza",
+    "temp": "hot",
+    "freshness": 123
+  },
+  {
+    "id": "ybh78",
+    "name": "Fish Tacos",
+    "temp": "hot",
+    "freshness": 108
+  },
+  {
+    "id": "yqa9r",
+    "name": "Apple",
+    "temp": "room",
+    "freshness": 167
+  },
+  {
+    "id": "y948i",
+    "name": "Vegetarian Pizza",
+    "temp": "hot",
+    "freshness": 175
+  },
+  {
+    "id": "aqoob",
+    "name": "Lukewarm Coke",
+    "temp": "room",
+    "freshness": 95
+  },
+  {
+    "id": "kb6ts",
+    "name": "Whole Wheat Bread",
+    "temp": "room",
+    "freshness": 113
+  },
+  {
+    "id": "drzid",
+    "name": "Lasagna",
+    "temp": "hot",
+    "freshness": 142
+  },
+  {
+    "id": "bnxq1",
+    "name": "Orange Sherbet",
+    "temp": "cold",
+    "freshness": 118
+  },
+  {
+    "id": "6j8bw",
+    "name": "Vegetarian Pizza",
+    "temp": "hot",
+    "freshness": 63
+  },
+  {
+    "id": "664yd",
+    "name": "Italian Meatballs",
+    "temp": "hot",
+    "freshness": 106
+  }
+]
